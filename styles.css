@@ -286,6 +286,12 @@ footer a:hover {
     margin: 0;
   }
 }
+
+@media (max-width: 410px) {
+  .main-image{
+    margin-top: 65px;
+  }
+}
 button {
   padding: 15px 30px;
   font-size: 20px;
