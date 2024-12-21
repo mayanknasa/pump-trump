@@ -281,31 +281,20 @@
       accordion.classList.toggle('open');
     });
   });
-  document.addEventListener('DOMContentLoaded', function () {
-    // Set the target date and time (e.g., December 11, 2024, at 12:00 PM local time)
-    const targetDate = new Date('2025-01-10T12:00:00');
+  // Define the target date
+  const targetDate = new Date("2025-01-10T23:59:59"); // Set your target date here
+  const currentDate = new Date();
 
-    // Get the current date and time
-    const currentDate = new Date();
-
-    // Ensure the target date comparison works
-    if (currentDate > targetDate) {
-      // Get elements by their IDs
-      const content = document.getElementById('content');
-      const notFoundMessage = document.getElementById('notFoundMessage');
-
-      if (content && notFoundMessage) {
-        // Hide the main content and show the 404 message
-        content.style.display = 'none';
-        notFoundMessage.style.display = 'block';
-      } else {
-        console.error('Element with ID "content" or "notFoundMessage" not found in the DOM.');
-      }
-
-      // Optionally, you could redirect to a custom 404 page instead of showing the message.
-      // window.location.href = '/404.html'; // Uncomment this to redirect to a custom 404 page.
-    }
-  });
+  // Check if the current date is less than the target date
+  if (currentDate < targetDate) {
+      // Show content if current date is before target date
+      document.getElementById('content').style.display = 'block';
+      document.getElementById('notFoundMessage').style.display = 'none';
+  } else {
+      // Show 404 message if current date is equal to or greater than target date
+      document.getElementById('content').style.display = 'none';
+      document.getElementById('notFoundMessage').style.display = 'block';
+  }
 </script>
 
 </html>
